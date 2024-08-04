@@ -1,0 +1,75 @@
+body{
+    background: #00a6fb;
+}
+.card_container {
+  perspective: 1000px; /* Set perspective on the container */
+}
+
+.card.flipper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: none;
+  margin-bottom: 300px;
+}
+
+/* Rotate the card on hover */
+.card.flipper:hover {
+  transform: rotateY(180deg);
+}
+
+/* Common styles for both front and back sides */
+.card.flipper .front,
+.card.flipper .back {
+  position: absolute; /* Required for 3D flipping */
+  width: 100%;
+  height: 300px;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Styles for the front side of the card */
+.card.flipper .front {
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+/* Overlay styles for the front side */
+.card.flipper .front .overlay {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  color: #FDF8E1;
+}
+
+/* Styles for the back side of the card */
+.card.flipper .back {
+  background: #FDF8E1;
+  color: black;
+  transform: rotateY(180deg); /* Initially hidden behind the front */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Additional styles for text inside the back */
+.card.flipper .back h4 {
+  margin-bottom: 15px;
+}
+
+.card.flipper .back p {
+  margin: 0;
+}
+
+h2{
+    font-style: italic;
+    color: #815AC0;
+}
